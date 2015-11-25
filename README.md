@@ -12,7 +12,7 @@ This visualization shows four generations of my Irish extended family. It all be
 
 * High fertility
 * Low chance of twins
-* Very few single people in my generation
+* Few single people
 * If this rate of reproduction continues (on average each grandchild has 3 kids) Eileen Walker could live to meet 
 * 70 of her great grandchildren
 * Predominantly white, very few family members of color
