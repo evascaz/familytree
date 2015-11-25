@@ -205,7 +205,7 @@ body ul {
 }
 
 .pink-text {
-	color: #e78a91;
+	color: #8db2be;
 }
 
 .pink-border {
@@ -227,8 +227,8 @@ body ul {
 }
 
 .dark-beige {
-	background: #d8d1c1;
-	border-color: #d8d1c1;
+	background: #7a7a7a;
+	border-color: #7a7a7a;
 }
 
 .grey {
@@ -255,7 +255,7 @@ body ul {
 }
 
 .white-text {
-	color: #fff;
+	color: #000000;
 }
 
 .black {
@@ -504,7 +504,7 @@ body ul {
 }
 
 #info .text a:hover {	
-	color: #e78a91;
+	color: #8db2be;
 	margin-right: 1em;
 }
 
@@ -1302,14 +1302,14 @@ body ul {
 
 
 .hex {
-	position: absolute;	
-    background: url('../img/hex.png') no-repeat left top;
-    background-size: 1.75em 2.1em;  
+	-webkit-border-radius: 50%;
+	-moz-border-radius: 50%;
+	border-radius: 50%;  
 }
 
 .hex-pink {
 	position: absolute;	
-    background: url('../img/hex-pink.png') no-repeat left top;
+    background: url('../img/hex-blu.png') no-repeat left top;
     background-size: 1.75em 2.1em;  
 }
 
