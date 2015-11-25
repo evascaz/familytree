@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<!-- for IE 9 -->
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+<title>Walker Family Tree</title>
+
+<meta name=description content=""/>
+<meta name=keywords content=""/>
+<meta name=author content="Eva Scazzero"/>
+<meta name=robots content="index, follow"/>
+<meta name=revisit_after content=14days />
+<meta charset=UTF-8>
+
+<link rel=icon type="image/x-icon" href="img/favicon.ico" />
+<link rel="stylesheet" type="text/css" href="css/login.css" />
+<link rel="stylesheet" type="text/css" href="css/style.css" />
+
+
+
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/modernizr-2.6.2.min.js"></script>
+<script type="text/javascript" src="libs/js/jquery.cookie.js"></script>
+<script type="text/javascript" src="js/jquery.tap.min.js"></script>
+<script type="text/javascript" src="js/jquery.mousewheel.js"></script>
+<script type="text/javascript" src="js/jquery.panzoom.min.js"></script>
+<script type="text/javascript" src="js/chehebar.js"></script>
+
+</head>
+
+<body>
+<!--[if lte IE 8]>	
+    <p id="update-browser">
+	    <br/><img src="img/chehebar-logo.gif"><br/> <br/> <br/> 
+	    You are using an <strong>outdated</strong> browser.<br/> 
+	    Please <a href="http://browsehappy.com/">upgrade your browser</a><br/>
+	    or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a><br/>
+	    to improve your experience.
+	</p>
+<![endif]-->
+
+<svg class="svg-graphic" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" version="1.1">
+    <g><clipPath id="hexagonal-mask"><polygon points="280,0 0,165 0,485 280,650 560,485 560,165" /></clipPath></g> 
+</svg>
+
+<!-- Site Container -->
+<div id="site-container">
+
+	<!-- Intro -->
+	<div id="intro">
+		<div class="animation center-v center-h">						
+			<div class="shape hexpink end-position paused"><img src="img/hex-pink.png"/></div>
+			<div class="shape circleblu start-position paused"><div class="css-shape circle blu"></div></div>	
+			<div class="logo-intro"><img src="img/logo-intro.png"/></div>			
+		</div>
+	</div>
+
+	<!-- Container -->
+	<div id="st-container" class="st-container">
+	
+		<!-- Member Info -->
+		<div class="member-info member-info-out">
+			<div class="button close-button"><span class="close"><div class="icon icon-close-outline"></div></span></div>
+			<div class="member-content">
+			</div>		
+		</div>
+			
+		<!-- Navigation -->
+		<nav id="nav" class="hidden-top">
+			<ul>
+				<li class="menu-button">		
+					<div class="button white cl-effect-2"><span class="menu"><div class="icon icon-menu-outline"></div></span></div>
+				</li>
+				<li class="info-button hidden-nav">		
+					<div class="button white cl-effect-2"><span class="info"><div class="icon icon-info-circle-outline"></div></span></div>
+				</li>
+				<li class="user-button hidden-nav" id="btnLogin">		
+					<div class="button white cl-effect-2"><span class="user"><div class="icon icon-user-outline"></div></span></div>
+				</li>
+				<!-- Logged -->
+				<li class="admin-button hidden-nav" id="btnCreatelink">		
+					<div class="button white cl-effect-2"><span class="create-link"><div class="icon icon-tree"></div></span></div>
+				</li>
+				<li class="admin-button hidden-nav" id="btnAdminister">		
+					<div class="button white cl-effect-2"><span class="administer"><div class="icon icon-tools-outline"></div></span></div>
+				</li>
+				<li class="logout-button hidden-nav" id="btnLogOut">		
+					<div class="button white cl-effect-2"><span class="logout"><div class="icon icon-logout-outline"></div></span></div>
+				</li>
+				<!-- Logged end -->
+				<li class="logo-container">
+					<div class="logo"></div>				
+				</li>			
+			</ul>
+		</nav>
+		
+		<!-- Zoom Controls -->
+		<div id="zoom-panel" class="member-out hidden-top">
+			<ul>
+				<li class="zoom-in-button">		
+					<div class="button white cl-effect-2"><span class="plus"><div class="icon icon-plus-rounded-outline"></div></span></div>
+				</li>
+				<li class="zoom-out-button">	
+					<div class="button white cl-effect-2"><span class="minus"><div class="icon icon-minus-rounded-outline"></div></span></div>
+				</li>
+				<li class="reset-button">	
+					<div class="button white cl-effect-2"><span class="reset"><div class="icon icon-reset-outline"></div></span></div>
+				</li>
+			</ul>
+		</div>
+		
+		<!-- Scroll to zoom Tooltip -->
+		<div id="scroll-to-zoom" class="white scaledown">
+			<ul>
+				<li class="text">SCROLL TO ZOOM</li>
+				<li class="icon icon-mouse-outline"></li>
+			<ul>
+		</div>
+			
+		<!-- Main Tree Window -->
+		<div id="main-window">				
+				
+				<!-- Family Tree Container -->
+				<div id="focal">	
+					<div id="tree-container" class="parent">	
+						<div id="tree">
+						</div>	
+					</div>	
+				</div>	<!-- Tree Container end -->				
+				
+		</div> <!-- Main Tree Window end -->
+		
+		<!-- Login window -->
+		<div id="bgShadowLogin" class="boxLogin"></div>
+			<div id="box-login" class="boxLogin">
+				<div class="header">Login</div>
+				<div class="body">
+					<form  autocomplete="off" id="frmLogin">
+					<input type="text" placeholder="Email" name="email" id="email" /><br />
+					<input type="password" placeholder="Password" name="password" id="password" />
+					<div style="width:180px;" class="left-float"><input type="checkbox" value="1" name="remember" id="remember" /> Remember me</div>
+					<div class="right-float"><input type="button" name="ENTER" value="ENTER" id="btnSubmitLogin" class="btn"></div>
+					</form><br clear="all" />
+					<div id="boxLoginError"></div>
+					<hr />
+					<div class="left-float"><a href="javascript:void(0);" id="btnReminder">Forgot your Password?</a></div>
+				</div>
+			</div>
+			
+			<div id="boxReminder" class="displayNone boxReminder">
+				<div class="header">Password reminder</div>
+				<div class="body">
+					<form  autocomplete="off" id="frmReminder">
+					<input type="text" placeholder="Email" name="reminderEmail" id="reminderEmail" />
+					<div class="right-float"><input type="button" name="SEND" value="SEND" id="btnSubmitReminder" class="btn"></div>
+					</form><br clear="all" />
+					<div id="boxReminderError"></div>
+				</div>
+			</div>
+			
+			<div id="boxReminderOk" class="displayNone boxReminder">
+				<div class="header">Password reminder</div>
+				<div class="body">
+					Password send correctly!
+				</div>
+			</div>
+		<!-- end login window-->
+		
+		<!--- TREE PASSWORD WINDOW -->
+		<div id="bgShadowPassword" class="boxPassword"></div>
+		<div id="treePassword" class="displayNone boxPassword">
+			<div class="header">Tree password</div>
+			<div class="body">
+				<form  autocomplete="off" id="frmPassword">
+				<input type="text" placeholder="Password" name="txtTreePassword" id="txtTreePassword" />
+				<input type="hidden" name="id_family" id="family_id" value="">
+				<div class="right-float"><input type="button" name="SEND" value="SEND" id="btnSubmitPassword" class="btn"></div>
+				</form><br clear="all">
+				<div id="boxPasswordError"></div>
+			</div>
+		</div>
+		
+	</div><!-- Container end -->
+	
+	<!-- Info -->
+	<div id="info" class="hidden-left">
+		<div class="text">
+			<p class="p1 transparent">Welcome to the Chehebar/Shehebar Family Website,<br/>a family run site for all things Chehebar/Shehebar.</p>
+			<p class="p2 transparent">We have spent countless hours gathering info, photos, and history, and interesting stories to share with the rest of our family members in a new and interactive way.</p>
+			<p class="p3 transparent">With your help, The Family Tree now spans<br/>8 generations and is growing every day.</p>
+			<p class="p4 transparent">If you have anything that would belong on this site, or just want to give a comment or feedback, you can email us at:</p>
+			<p class="p5 transparent"><a href="mailto:info@chehebar.com">info@chehebar.com</a></p>
+		</div>
+		<div class="close"><div class="icon icon-arrow-right"></div></div>
+	</div>
+
+</div><!-- Site Container end -->
+
+<!-- Footer -->
+<div id="footer">
+	<span>Design by <a href="http://www.laurab.net" target="_blank">LAURAB.NET</a></span>
+</div>
+
+
+
+
+<script src="apps/Trace.js"></script>
+<script src="apps/Login.js"></script>
+<script src="apps/TreePassword.js"></script>
+<script src="apps/DataSave.js"></script>
+<input type="hidden" id="hiddenData" value="" />
+<div id="loading" class="visuallyhidden"></div>
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-39992225-3', 'chehebar.com');
+  ga('send', 'pageview');
+
+</script>
+
+</body>
+</html>
