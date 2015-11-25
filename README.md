@@ -10,11 +10,12 @@ This visualization shows four generations of my Irish extended family. It all be
 
 ###What The Visual Shows
 
+* Circle shapes show blood realtives, hex shapes show in-laws by marriage 
 * High fertility
 * Low chance of twins
 * Few single people
 * If this rate of reproduction continues (on average each grandchild has 3 kids) Eileen Walker could live to meet 
-* 70 of her great grandchildren
+70 of her great grandchildren
 * Predominantly white, very few family members of color
 
 ### Interactivity 
